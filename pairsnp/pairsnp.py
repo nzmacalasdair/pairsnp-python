@@ -74,7 +74,7 @@ def calculate_snp_matrix(fastafile,zipped=False):
     col = col[0:right]
     val = val[0:right]
 
-    sparse_snps = sparse.csc_matrix((val, (row, col)), shape=(nseqs, align_length))
+    sparse_snps = sparse.csr_matrix((val, (row, col)), shape=(nseqs, align_length))
 
     return sparse_snps, consensus, seq_names
 
